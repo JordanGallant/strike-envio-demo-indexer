@@ -1,0 +1,28 @@
+type STRK_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  amount: BigInt!
+}
+
+type STRK_DelegateChanged {
+  id: ID!
+  delegator: String!
+  fromDelegate: String!
+  toDelegate: String!
+}
+
+type STRK_DelegateVotesChanged {
+  id: ID!
+  delegate: String!
+  previousBalance: BigInt!
+  newBalance: BigInt!
+}
+
+type STRK_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  amount: BigInt!
+}
+

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: strike
+networks:
+- id: 1
+  start_block: 0
+  contracts:
+  - name: STRK
+    address:
+    - 0x74232704659ef37c08995e386A2E26cc27a8d7B1
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 amount)
+    - event: DelegateChanged(address indexed delegator, address indexed fromDelegate, address indexed toDelegate)
+    - event: DelegateVotesChanged(address indexed delegate, uint256 previousBalance, uint256 newBalance)
+    - event: Transfer(address indexed from, address indexed to, uint256 amount)
+rollback_on_reorg: false
